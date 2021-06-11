@@ -30,7 +30,7 @@ Terraform実行環境のバージョン情報です。
 [main.tf](#main_tf)の実行時に使用する変数名を指定します。  
 実行前に
 [Azureリソースの名前付け規制と制限事項](https://docs.microsoft.com/ja-jp/azure/azure-resource-manager/management/resource-name-rules)
-の内容を十分に確認いただき適切な値に必ず変更してから実行するようにしてください。
+の内容をもとに、適切な値に変更してから実行します。
 
 | 変数名 | サンプルの値 | 説明 |
 | ------------- | ------------- | ------------- |
