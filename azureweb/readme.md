@@ -84,7 +84,7 @@ resource "azurerm_resource_group" "example" {
 }
 ```
 
-## コンテナレジストリの作成  
+### コンテナレジストリの作成  
 
 コンテナレジストリの名前に[init.tfvars](#init_tfvars) の変数名「prefix」に文字列「cr」を連結した値がセットされます。  
 ※指定しているパラメータの詳細は
@@ -131,7 +131,7 @@ resource "azurerm_storage_container" "example-chat" {
 Azure Database for PostgreSQLの名前に[init.tfvars](#init_tfvars) の変数名「prefix」に文字列「pg」を連結した値がセットされます。  
 DBサーバー管理ユーザ名に[init.tfvars](#init_tfvars) の変数名「dbadmin」の値がセットされます。  
 DBサーバー管理ユーザパスワードに[init.tfvars](#init_tfvars) の変数名「dbpassword」の値がセットされます。  
-※指定しているパラメータの詳細は  
+※指定しているパラメータの詳細は
 [AZURERM DOCUMENTATIONのazurerm_postgresql](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/postgresql_database)
 を参照します。
 ```
@@ -183,7 +183,7 @@ resource "azurerm_redis_cache" "example" {
 
 ## variables_tf
 
-このファイルは変更せずにそのまま使用します。
+このファイルは変更せずにそのまま使用します。  
 [main.tf](#main_tf)の実行時に受け渡しする参照変数を定義しています。  
 [init.tfvars](#init_tfvars) のファイルの変数名、サンプルの値を、このファイルの定義に沿って[main.tf](#main_tf)に渡します。
 ``` 
@@ -209,7 +209,7 @@ variable "dbpassword" {
 
 ## outputs_tf  
 
-このファイルは変更せずにそのまま使用します。
+このファイルは変更せずにそのまま使用します。  
 [main.tf](#main_tf)の実行後に標準出力に出力される実行結果の値を定義しています。
 ``` 
 ##### コンテナレジストリの名前 #####
