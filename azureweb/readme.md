@@ -22,7 +22,7 @@ Terraform実行環境のバージョン情報です。
 
 ----
 
-###init_tfvars
+## init_tfvars
 
 [main.tf](#main_tf)の実行時に使用する変数名を指定します。  
 実行前に
@@ -33,11 +33,12 @@ Terraform実行環境のバージョン情報です。
 | ------------- | ------------- | ------------- |
 | prefix  | examplechat210611  |作成するAzure上のリソースの名前の先頭の値です。固有の名前になるよう指定します。 |
 | location  | japaneast  | 作成するAzure上のリソースのリージョンを指定します。サンプルでは東日本リージョン"japaneast"を指定しています。 |
-| dbadmin  | chatadmin  | [Azure Database for PostgreSQL](#Azure Database for PostgreSQLの作成)の管理者ユーザー名を指定します。  |
-| dbpassword  | -Y=T-w!#MMfm@Y4%  |  [Azure Database for PostgreSQL](#Azure Database for PostgreSQLの作成)の管理者ユーザーパスワードを指定します。 |
+| dbadmin  | chatadmin  | [Azure Database for PostgreSQL](#PostgreSQLの作成)の管理者ユーザー名を指定します。  |
+| dbpassword  | -Y=T-w!#MMfm@Y4%  |  [Azure Database for PostgreSQL](#PostgreSQLの作成)の管理者ユーザーパスワードを指定します。 |
 
 ----
-###main_tf
+
+## main_tf
 
 terraform/main.tfファイルの簡単な解説です。  
 このファイルでは以下のリソースを構成しています。  
@@ -45,10 +46,11 @@ terraform/main.tfファイルの簡単な解説です。
 - [リソースグループの作成](#リソースグループの作成)  
 - [コンテナレジストリの作成](#コンテナレジストリの作成)  
 - [ストレージアカウントとコンテナーの作成](#ストレージアカウントとコンテナーの作成)  
-- [Azure Database for PostgreSQLの作成](#Azure Database for PostgreSQLの作成)  
-- [Azure Cache for Redisの作成](#Azure Cache for Redisの作成)  
+- [Azure Database for PostgreSQLの作成](#PostgreSQLの作成)  
+- [Azure Cache for Redisの作成](#Redisの作成)  
 
-####AzureRMプロバイダーを指定  
+### AzureRMプロバイダーを指定  
+
 TerraformのAzureプロバイダーを指定します。  
 ※指定しているパラメータの詳細は
 [AZURERM DOCUMENTATIONのAzure Provider](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs)
@@ -64,7 +66,8 @@ terraform {
 }
 ```
 
-####リソースグループの作成  
+### リソースグループの作成  
+
 リソースグループの名前に[init.tfvars](#init_tfvars) の変数名「prefix」に文字列「-rg」を連結した値がセットされます。  
 ロケーションに[init.tfvars](#init_tfvars) の変数名「location」の値がセットされます。
 ※指定しているパラメータの詳細は
@@ -78,7 +81,8 @@ resource "azurerm_resource_group" "example" {
 }
 ```
 
-####コンテナレジストリの作成
+## コンテナレジストリの作成  
+
 コンテナレジストリの名前に[init.tfvars](#init_tfvars) の変数名「prefix」に文字列「cr」を連結した値がセットされます。  
 ※指定しているパラメータの詳細は
 [AZURERM DOCUMENTATIONのazurerm_container_registry](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/container_registry)
@@ -94,7 +98,8 @@ resource "azurerm_container_registry" "example" {
 }
 ```
 
-####ストレージアカウントとコンテナーの作成
+### ストレージアカウントとコンテナーの作成  
+
 ストレージアカウントの名前に[init.tfvars](#init_tfvars) の変数名「prefix」に文字列「sa」を連結した値がセットされます。  
 ストレージコンテナの名前は「example-chat」を指定する必要があります。この名前は変更しないでください。  
 ※指定しているパラメータの詳細は
@@ -118,7 +123,8 @@ resource "azurerm_storage_container" "example-chat" {
 }
 ```
 
-####Azure Database for PostgreSQLの作成
+### PostgreSQLの作成  
+
 Azure Database for PostgreSQLの名前に[init.tfvars](#init_tfvars) の変数名「prefix」に文字列「pg」を連結した値がセットされます。  
 DBサーバー管理ユーザ名に[init.tfvars](#init_tfvars) の変数名「dbadmin」の値がセットされます。  
 DBサーバー管理ユーザパスワードに[init.tfvars](#init_tfvars) の変数名「dbpassword」の値がセットされます。  
@@ -146,7 +152,8 @@ resource "azurerm_postgresql_server" "example" {
 }
 ```
 
-####Azure Cache for Redisの作成
+### Redisの作成  
+
 Azure Database for PostgreSQLの名前に[init.tfvars](#init_tfvars) の変数名「prefix」に文字列「rd」を連結した値がセットされます。  
 ※指定しているパラメータの詳細は
 [AZURERM DOCUMENTATIONのazurerm_redis_cache](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/redis_cache)
@@ -171,7 +178,7 @@ resource "azurerm_redis_cache" "example" {
 
 ----
 
-###variables_tf
+## variables_tf
 
 このファイルは変更せずにそのまま使用します。
 [main.tf](#main_tf)の実行時に受け渡しする参照変数を定義しています。  
@@ -197,7 +204,7 @@ variable "dbpassword" {
 
 ----
 
-###outputs_tf
+## outputs_tf  
 
 このファイルは変更せずにそのまま使用します。
 [main.tf](#main_tf)の実行後に標準出力に出力される実行結果の値を定義しています。
