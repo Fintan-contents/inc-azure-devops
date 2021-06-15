@@ -1,0 +1,57 @@
+[
+  {
+    "name": "NABLARCH_DB_URL",
+    "slotSetting": false,
+    "value":"jdbc:postgresql://examplechat210604pg.postgres.database.azure.com:5432/postgres?sslmode=require"
+   },
+  {
+    "name": "NABLARCH_DB_USER",
+    "slotSetting": false,
+    "value":"chatadmin@examplechat210604pg.postgres.database.azure.com"
+   },
+  {
+    "name": "NABLARCH_DB_PASSWORD",
+    "slotSetting": false,
+    "value":"-Y=T-w!#MMfm@Y4%"
+   },
+  {
+    "name": "NABLARCH_LETTUCE_SIMPLE_URI",
+    "slotSetting": false,
+    "value":"rediss://VtGjAnQ5+bCw3bRhG6VIO+kxxJP5TzsLwfWkqFoB0rY=@examplechat210604rd.redis.cache.windows.net:6380"
+   },
+  {
+    "name": "WEBSOCKET_URI",
+    "slotSetting": false,
+    "value":"wss://examplechat210604cr-notifier.azurewebsites.net:443/notification"
+   },
+  {
+    "name": "CORS_ORIGINS",
+    "slotSetting": false,
+    "value":"https://examplechat210604cr-frontend.azurewebsites.net"
+   },
+  {
+    "name": "BACKEND_BASE_URL",
+    "slotSetting": false,
+    "value":"https://examplechat210604cr.azurewebsites.net"
+   },
+  {
+    "name": "APPLICATION_EXTERNAL_URL",
+    "slotSetting": false,
+    "value":"https://examplechat210604cr-frontend.azurewebsites.net"
+   },
+  {
+    "name": "NABLARCH_SESSIONSTOREHANDLER_COOKIESECURE",
+    "slotSetting": false,
+    "value":true
+   },
+  {
+    "name": "AZURE_BLOBSTORAGE_CONNECTIONSTRING",
+    "slotSetting": false,
+    "value":"DefaultEndpointsProtocol=https;AccountName=examplechat210604sa;AccountKey=GsiJc2VkVH6cjiwhd0HZMZmoAAAGsH6d+MiGoQCkT6jPQQWyXJtkMkN5g8okzZkdZoP0IcxdDs8UBZcdU44bYA==;EndpointSuffix=core.windows.net"
+   },
+  {
+    "name": "WEBSITES_PORT",
+    "slotSetting": false,
+    "value":8080
+   }
+]

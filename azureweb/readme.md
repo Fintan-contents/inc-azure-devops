@@ -21,7 +21,11 @@ Terraform実行環境のバージョン情報です。
 >   　┣[main.tf](#main_tf)  
 >   　┣[variables.tf](#variables_tf)  
 >   　┗[outputs.tf](#outputs_tf)  
->　readme.md  （このファイルです）
+> ┗cli  
+>   　┣[example-chat-backend.json](#example-chat-backend_json)
+>   　┣[example-chat-frontend.json](#example-chat-frontend_json)
+>   　┗[example-chat-notifier.json](#example-chat-notifier_json)
+> >　readme.md  （このファイルです）
 
 ----
 
@@ -152,6 +156,7 @@ resource "azurerm_postgresql_server" "example" {
         administrator_login_password = var.dbpassword
         version = "11"
         ssl_enforcement_enabled = true
+        allow_access_to_azure_services =  true
 }
 ```
 
@@ -229,3 +234,23 @@ output "azure_redis_cache" {
 value = "${azurerm_redis_cache.example.name}"
 }
 ``` 
+----
+
+## example-chat-backend_json  
+
+「[環境変数を設定する](https://fintan.jp/?p=6634#set-environment-variables) 」のbackendのアプリケーション設定の構成をターミナルからAzure CLIで一括設定するために使用するファイルです。  
+実行前に各々の環境の応じて変更する必要があります。
+
+----
+
+## example-chat-frontend_json  
+
+「[環境変数を設定する](https://fintan.jp/?p=6634#set-environment-variables) 」のfrontendのアプリケーション設定の構成をターミナルからAzure CLIで一括設定するために使用するファイルです。  
+実行前に各々の環境の応じて変更する必要があります。
+
+----
+
+## example-chat-notifier_json  
+
+「[環境変数を設定する](https://fintan.jp/?p=6634#set-environment-variables) 」のnotifierのアプリケーション設定の構成をターミナルからAzure CLIで一括設定するために使用するファイルです。  
+実行前に各々の環境の応じて変更する必要があります。

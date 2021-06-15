@@ -59,6 +59,7 @@ resource "azurerm_postgresql_server" "example" {
         administrator_login_password = var.dbpassword
         version = "11"
         ssl_enforcement_enabled = true
+        allow_access_to_azure_services =  true
 }
 
 ##### Azure Cache for Redis #####

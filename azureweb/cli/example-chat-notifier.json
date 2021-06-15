@@ -1,0 +1,12 @@
+[
+  {
+    "name": "NABLARCH_LETTUCE_SIMPLE_URI",
+    "slotSetting": false,
+    "value":"rediss://BBBvLBD+dYtfmtw050c8f62VbCExIJJCIe9XqCOuc2Y=@examplechat210604.redis.cache.windows.net:6380"
+   },
+  {
+    "name": "WEBSITES_PORT",
+    "slotSetting": false,
+    "value":8080
+   }
+]
