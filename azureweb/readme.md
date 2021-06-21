@@ -78,7 +78,7 @@ terraform {
 リソースグループの名前に[init.tfvars](#init_tfvars) の変数名「prefix」に文字列「-rg」を連結した値がセットされます。  
 ロケーションに[init.tfvars](#init_tfvars) の変数名「location」の値がセットされます。
 ※指定しているパラメータの詳細は
-[AZURERM DOCUMENTATIONのAazurerm_resource_group](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/resource_group)
+[AZURERM DOCUMENTATIONのazurerm_resource_group](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/resource_group)
 を参照します。
 ```
 ##### リソースグループ #####
