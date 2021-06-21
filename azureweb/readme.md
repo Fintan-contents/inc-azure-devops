@@ -82,9 +82,9 @@ terraform {
 を参照します。
 ```
 ##### リソースグループ #####
-resource "azurerm_resource_group" "example" {
-        name = "${var.prefix}-rg"
-        location = var.location
+esource "azurerm_resource_group" "example" {
+  name     = "${var.prefix}-rg"
+  location = var.location
 }
 ```
 
@@ -97,11 +97,11 @@ resource "azurerm_resource_group" "example" {
 ```
 ##### コンテナレジストリ #####
 resource "azurerm_container_registry" "example" {
-        name = "${var.prefix}cr"
-        resource_group_name = azurerm_resource_group.example.name
-        location = azurerm_resource_group.example.location
-        sku = "Basic"
-        admin_enabled = true
+  name                = "${var.prefix}cr"
+  resource_group_name = azurerm_resource_group.example.name
+  location            = azurerm_resource_group.example.location
+  sku                 = "Basic"
+  admin_enabled       = true
 }
 ```
 
@@ -115,18 +115,18 @@ resource "azurerm_container_registry" "example" {
 ```
 ##### ストレージアカウント #####
 resource "azurerm_storage_account" "example" {
-        name = "${var.prefix}sa"
-        resource_group_name = azurerm_resource_group.example.name
-        location = azurerm_resource_group.example.location
-        account_tier = "Standard"
-        account_replication_type = "LRS"
+  name                     = "${var.prefix}sa"
+  resource_group_name      = azurerm_resource_group.example.name
+  location                 = azurerm_resource_group.example.location
+  account_tier             = "Standard"
+  account_replication_type = "LRS"
 }
 
 ##### ストレージコンテナ #####
 resource "azurerm_storage_container" "example-chat" {
-        name = "example-chat"
-        storage_account_name = azurerm_storage_account.example.name
-        container_access_type = "private"
+  name                  = "example-chat"
+  storage_account_name  = azurerm_storage_account.example.name
+  container_access_type = "private"
 }
 ```
 
@@ -141,22 +141,22 @@ DBサーバー管理ユーザパスワードに[init.tfvars](#init_tfvars) の�
 ```
 ##### Azure Database for PostgreSQL #####
 resource "azurerm_postgresql_server" "example" {
-        name = "${var.prefix}pg"
-        location = azurerm_resource_group.example.location
-        resource_group_name = azurerm_resource_group.example.name
+  name                = "${var.prefix}pg"
+  location            = azurerm_resource_group.example.location
+  resource_group_name = azurerm_resource_group.example.name
 
-        sku_name = "B_Gen5_1"
+  sku_name = "B_Gen5_1"
 
-        storage_mb = 5120
-        backup_retention_days = 7
-        geo_redundant_backup_enabled = false
-        auto_grow_enabled = true
+  storage_mb                   = 5120
+  backup_retention_days        = 7
+  geo_redundant_backup_enabled = false
+  auto_grow_enabled            = true
 
-        administrator_login = var.dbadmin
-        administrator_login_password = var.dbpassword
-        version = "11"
-        ssl_enforcement_enabled = true
-        allow_access_to_azure_services =  true
+  administrator_login            = var.dbadmin
+  administrator_login_password   = var.dbpassword
+  version                        = "11"
+  ssl_enforcement_enabled        = true
+  allow_access_to_azure_services = true
 }
 ```
 
@@ -169,18 +169,18 @@ Azure Cache for Redisの名前に[init.tfvars](#init_tfvars) の変数名「pref
 ```
 ##### Azure Cache for Redis #####
 resource "azurerm_redis_cache" "example" {
-       name = "${var.prefix}rd"
-       location = azurerm_resource_group.example.location
-       resource_group_name = azurerm_resource_group.example.name
-       capacity = 0
-       family = "C"
-       sku_name = "Basic"
-       enable_non_ssl_port = false
-       minimum_tls_version = "1.2"
-       public_network_access_enabled = true
+  name                          = "${var.prefix}rd"
+  location                      = azurerm_resource_group.example.location
+  resource_group_name           = azurerm_resource_group.example.name
+  capacity                      = 0
+  family                        = "C"
+  sku_name                      = "Basic"
+  enable_non_ssl_port           = false
+  minimum_tls_version           = "1.2"
+  public_network_access_enabled = true
 
-       redis_configuration {
-       }
+  redis_configuration {
+  }
 }
 ``` 
 
@@ -219,19 +219,19 @@ variable "dbpassword" {
 ``` 
 ##### コンテナレジストリの名前 #####
 output "azure_container_registry_name" {
-value = "${azurerm_container_registry.example.name}"
+  value = azurerm_container_registry.example.name
 }
 ##### コンテナレジストリのドメイン #####
 output "azure_container_registry_domain" {
-value = "${azurerm_container_registry.example.name}.azurecr.io"
+  value = "${azurerm_container_registry.example.name}.azurecr.io"
 }
 ##### Azure Database for PostgreSQLのサーバー名 #####
 output "azure_postgresql_server" {
-value = "${azurerm_postgresql_server.example.name}"
+  value = azurerm_postgresql_server.example.name
 }
 ##### Azure Cache for Redisのサーバー名 #####
 output "azure_redis_cache" {
-value = "${azurerm_redis_cache.example.name}"
+  value = azurerm_redis_cache.example.name
 }
 ``` 
 ----
