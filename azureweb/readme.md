@@ -162,7 +162,7 @@ resource "azurerm_postgresql_server" "example" {
 
 ### Redisの作成  
 
-Azure Database for PostgreSQLの名前に[init.tfvars](#init_tfvars) の変数名「prefix」に文字列「rd」を連結した値がセットされます。  
+Azure Cache for Redisの名前に[init.tfvars](#init_tfvars) の変数名「prefix」に文字列「rd」を連結した値がセットされます。  
 ※指定しているパラメータの詳細は
 [AZURERM DOCUMENTATIONのazurerm_redis_cache](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/redis_cache)
 参照します。
