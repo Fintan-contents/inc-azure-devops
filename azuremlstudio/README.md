@@ -1,8 +1,8 @@
-# Azure ML StudioでKaggleのデータセットを使ってみる
+# Azure Machine Learning スタジオでKaggleコンベンションにも使える機械学習環境を構築してみる
 
 ----
 
-ブログ「Azure ML StudioでKaggleのデータセットを使ってみる」で使用している資材の説明ページです。
+ブログ「Azure Machine Learning スタジオでKaggleコンベンションにも使える機械学習環境を構築してみる」で使用している資材の説明ページです。
 
 - 環境情報
 
